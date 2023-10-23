@@ -1,0 +1,22 @@
+@import "components/ui/__variables";
+
+.chat {
+  padding: 1rem;
+
+  height: 100%;
+
+  position: absolute;
+
+  width: 100%;
+
+  @media screen and (max-width: $medium-screen) {
+    padding: 0.75rem;
+  }
+
+  &__non-chats{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

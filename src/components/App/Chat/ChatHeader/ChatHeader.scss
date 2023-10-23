@@ -1,0 +1,55 @@
+@import "components/ui/__variables";
+
+.chat-header {
+  height: 70px;
+  border-radius: $border-radius;
+  position: fixed;
+  top: 30px;
+
+  left: 5%;
+  right: 5%;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: $background-color;
+  // border-radius: calc($border-radius + 30px);
+  //   border-radius: calc($border-radius + 10px);
+  border-radius: calc($border-radius + 10px) calc($border-radius + 10px) 0px 0px;
+  border: 0.01px solid $primary-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  div {
+    display: flex;
+    align-items: center;
+    span {
+      height: fit-content;
+    }
+  }
+  @media screen and (max-width: $medium-screen) {
+    left: 30px;
+    right: 30px;
+    left: 0px !important;
+    right: 0px !important;
+    top: 0px !important;
+    border-color: rgba($white-color, 0.2);
+    border-radius: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  p {
+    font-size: 20px;
+    color: $white-color;
+    font-weight: 650;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  color: $white-color;
+
+  i {
+    font-size: 20px !important;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+}

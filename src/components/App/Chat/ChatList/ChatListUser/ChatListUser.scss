@@ -1,0 +1,24 @@
+@import "components/ui/__variables";
+
+.chat-list-user {
+  background-color: rgba($primary-color, 0.01);
+  border: 0.5px solid rgba($secondary-color, 0.1);
+  color: $white-color;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  height: fit-content !important;
+  gap: 20px;
+
+  i {
+    font-size: 40px;
+  }
+
+  p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    @media screen and (max-width: $medium-screen) {
+        font-size: 16px !important;
+    }
+  }
+}

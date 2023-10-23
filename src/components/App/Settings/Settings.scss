@@ -1,0 +1,22 @@
+@import "components/ui/__variables";
+
+.settings {
+  h3 {
+    color: $white-color !important;
+    font-weight: 650;
+  }
+
+  .text-input {
+    margin-top: 0 !important;
+    label {
+      color: $white-color;
+    }
+    .input {
+      margin-top: 0 !important;
+      height: 60px !important;
+      background-color: $background-color;
+      border-width: 0.5px !important;
+      color: $white-color !important;
+    }
+  }
+}

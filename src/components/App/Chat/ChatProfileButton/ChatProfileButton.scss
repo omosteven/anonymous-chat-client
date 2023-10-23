@@ -1,0 +1,25 @@
+@import "components/ui/__variables";
+
+.chat-profile-button {
+  position: fixed;
+  bottom: 60px;
+  left: calc(5% + 30px);
+  right: calc(5% + 30px);
+
+  @media screen and (max-width: $medium-screen) {
+    left: 30px;
+    right: 30px;
+    bottom: 24px;
+  }
+
+  button {
+    width: 300px !important;
+    margin-left: auto;
+    display: block;
+    margin-right: auto;
+    background-color: $background-color !important;
+    @media screen and (max-width: $medium-screen) {
+       width: 100% !important;
+      }
+  }
+}

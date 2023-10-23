@@ -1,0 +1,163 @@
+@import "components/ui/__variables";
+
+// .message {
+//   clear: both;
+//   position: relative;
+//   &.sent {
+//     float: right;
+//   }
+
+//   .message-user{
+//     top:30px;
+//     left: -10px;
+//     position: relative;
+//     // .icon{
+// color:$white-color !important;
+//     // }
+//     font-size: 24px;
+//   }
+// }
+
+// .message .arrow {
+//   width: 12px;
+//   height: 20px;
+//   overflow: hidden;
+//   position: relative;
+//   float: left;
+//   top: 6px;
+//   right: -1px;
+//   &.sent {
+//     float: right;
+//     right: unset;
+//   }
+// }
+
+// .message .arrow .inner {
+//   width: 0;
+//   height: 0;
+//   border-right: 20px solid $secondary-color;
+//   border-top: 10px solid transparent;
+//   border-bottom: 10px solid transparent;
+//   position: absolute;
+//   top: 0;
+//   left: 2px;
+//   &.sent {
+//     left: 0px;
+//     top: 2px;
+//     border-left: 12px solid #ffffff;
+//     border-top: 5px solid transparent;
+//     border-bottom: 5px solid transparent;
+//     right: 2px;
+//   }
+// }
+
+// .message .message-body {
+//   float: left;
+//   width: 400px;
+//   height: auto;
+//   border: 0.5px solid $secondary-color;
+//   background-color: transparent;
+//   color: $white-color;
+//   //   border: 1px solid #000000;
+//   padding: 1rem;
+//   -webkit-border-radius: $border-radius;
+//   -moz-border-radius: $border-radius;
+//   -o-border-radius: $border-radius;
+//   border-radius: calc($border-radius + 5px);
+//   @media screen and (max-width: $medium-screen) {
+//     width: calc(100% - 12px);
+//   }
+//   &.sent {
+//     border-color: $white-color;
+//   }
+
+//   p {
+//     color: $white-color;
+//   }
+//   span {
+//     color: $white-color;
+//     font-weight: bold;
+//     font-size: 12px;
+//   }
+//   .delete-message {
+//     color: $cancel-color;
+//     font-size: 12px;
+//     cursor: pointer;
+//     float: right;
+//     display: none;
+//   }
+//   &.sent {
+//     margin-left: auto;
+//     border-color: $white-color;
+//     .delete-message {
+//       color: $cancel-color;
+//       font-size: 12px;
+//       cursor: pointer;
+//       float: right;
+//       display: block;
+//       opacity: 0.8;
+//     }
+//   }
+// }
+
+// .message-body{
+//     width: 290px;
+// }
+
+.message {
+  width: 40%;
+  display: flex;
+  align-items: end;
+  &.sent {
+    margin-left: auto;
+    flex-direction: row-reverse;
+  }
+  @media screen and (max-width: $medium-screen) {
+    width: calc(100% - 32px);
+  }
+  &__user {
+    color: $white-color;
+    font-size: 24px;
+    margin-right: 10px;
+    &.sent {
+      margin-left: 10px;
+      margin-right: 0px;
+    }
+  }
+  &__body {
+    height: fit-content;
+    width: 100%;
+    border: 0.5px solid $secondary-color;
+    border-radius: 20px 20px 20px 0px;
+    padding: 16px;
+    background-color: rgba($secondary-color, 0.1);
+    border-color: rgba($secondary-color, 0.1);
+    @media screen and (max-width: $medium-screen) {
+      padding: 12px;
+    }
+    &.sent {
+      border-radius: 20px 20px 0px 20px;
+      border-color: rgba($white-color, 0.1);
+      background-color: rgba($primary-color, 0.1);
+    }
+    p {
+      color: $white-color;
+      font-weight: 650;
+      @media screen and (max-width: $medium-screen) {
+        font-size: 13px;
+      }
+    }
+    span {
+      color: $white-color;
+      font-size: 12px;
+    }
+  }
+  &__delete {
+    color: $cancel-color;
+    display: none;
+    &.sent {
+      display: initial;
+      float: right;
+    }
+  }
+}

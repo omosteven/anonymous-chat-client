@@ -1,0 +1,4 @@
+export const CHAT_STAGES = {
+  CHAT_LIST: "CHAT_LIST",
+  CHAT_MESSAGES: "CHAT_MESSAGES",
+};

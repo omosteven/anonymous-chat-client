@@ -1,0 +1,50 @@
+@import "components/ui/__variables";
+
+.chat-input {
+  height: fit-content;
+  display: flex;
+  position: fixed;
+  bottom: 50px;
+  align-items: center;
+  left: calc(5% + 30px);
+  right: calc(5% + 30px);
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: $background-color;
+  border-radius: calc($border-radius + 10px);
+  border: 0.01px solid $primary-color;
+  @media screen and (max-width: $medium-screen) {
+    left: 30px;
+    right: 30px;
+    bottom: 24px;
+  }
+
+  .text-input {
+    width: calc(100% - 40px);
+    margin-top: 0 !important;
+    .input {
+      margin-top: 0 !important;
+      height: 60px !important;
+      background-color: $background-color;
+      border: none;
+      color: $white-color !important;
+    }
+  }
+  .custom-button {
+    border-radius: 100% !important;
+    width: 16px !important;
+    .button-icon {
+      font-size: 30px !important;
+    }
+    button {
+      border-radius: 100% !important;
+      width: 40px !important;
+      height: 40px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      background-color: $background-color !important;
+      border: none !important;
+    }
+  }
+}

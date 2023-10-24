@@ -26,4 +26,10 @@ export const USER_RACES = [
     value: "WHITE",
     label: "White",
   },
+  { value: "ASIAN", label: "Asian" },
+  { value: "N/A", label: "N/A" },
+  {
+    value: "OTHERS",
+    label: "Others",
+  },
 ];

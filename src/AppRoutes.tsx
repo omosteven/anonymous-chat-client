@@ -1,31 +1,39 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { routes } from "./routes";
 import { getAuthToken } from "storage";
-import { redirect } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const AppRoutes = () => {
-  const token = getAuthToken();
-  if (!token) {
-    redirect("/");
-  }
+  const userToken = getAuthToken() || "";
+  const { user } = useSelector((state: any) => state?.auth);
+
+  const isAuthenticated =
+    userToken?.length > 0 && Object.keys(user)?.length > 0;
+
+  const currentPath = window.location.pathname;
+
   return (
     <Routes>
       {routes.map(({ route, component }, key) => {
         return (
           <React.Fragment key={key}>
-            <Route path={route} element={component} key={key} />
-            {/* <AppRoute path={route} element={component} key={key}/> */}
-            {/* <Route path={route} element={component} key={key} /> */}
-            {/* {subRoutes?.length === 0 ? (
-              <Route path={route} element={component} key={key} />
-            ) : (
-              <React.Fragment key={key}>
-                {subRoutes.map(({ route, component }, subKey) => (
-                  <Route path={route} element={component} key={subKey} />
-                ))}
-              </React.Fragment>
-            )} */}
+            <Route
+              path={route}
+              element={
+                currentPath !== "/" ? (
+                  isAuthenticated ? (
+                    component
+                  ) : (
+                    <Navigate to="/" />
+                  )
+                ) : isAuthenticated ? (
+                  <Navigate to="/chat" />
+                ) : (
+                  component
+                )
+              }
+            />
           </React.Fragment>
         );
       })}

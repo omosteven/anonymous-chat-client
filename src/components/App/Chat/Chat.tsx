@@ -92,10 +92,7 @@ const Chat = () => {
   };
 
   const getChatList = () => {
-    setTimeout(() => {
-      setStatus(DATAMODE);
-    }, 3000);
-
+    setStatus(LOADING);
     const unsubscribe = onSnapshot(
       pullFirebaseCollections(user?._id),
 
@@ -106,13 +103,12 @@ const Chat = () => {
         });
 
         updateChatUserIds(fetchedChatList);
+        setStatus(fetchedChatList?.length > 0 ? DATAMODE : NULLMODE);
       }
     );
 
     return () => unsubscribe;
   };
-
-  console.log({ chatUserIds });
 
   useEffect((): any => {
     getChatList();

@@ -87,6 +87,7 @@ const Settings = (props: { isOpen: boolean; onClose: Function }) => {
           name="race"
           hasError={Boolean(errors?.race)}
         />
+        {/* <Checkbox label="Use Race Match" /> */}
         <Button className="close--button" text={"Update"} isLoading={loading} />
       </form>
 

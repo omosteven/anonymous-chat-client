@@ -4,13 +4,14 @@ import ChatListUser from "./ChatListUser/ChatListUser";
 const ChatList = (props: {
   handleSelectChat: Function;
   setStatus: Function;
+  chatList: Array<any>;
 }) => {
-  const { handleSelectChat } = props;
+  const { handleSelectChat, chatList } = props;
 
   return (
     <section className="chat-list">
-      {Array.from({ length: 10 })?.map((x, key) => (
-        <ChatListUser key={key} handleSelectChat={handleSelectChat} />
+      {chatList?.map((x, key) => (
+        <ChatListUser key={key} handleSelectChat={handleSelectChat} {...x} />
       ))}
     </section>
   );

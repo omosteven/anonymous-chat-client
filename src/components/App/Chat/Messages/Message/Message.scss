@@ -140,12 +140,23 @@
       border-color: rgba($white-color, 0.1);
       background-color: rgba($primary-color, 0.1);
     }
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      span {
+        font-size: 10px !important;
+      }
+    }
     p {
       color: $white-color;
       font-weight: 650;
       @media screen and (max-width: $medium-screen) {
         font-size: 13px;
       }
+      max-width: 150px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     span {
       color: $white-color;

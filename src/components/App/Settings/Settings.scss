@@ -6,6 +6,12 @@
     font-weight: 650;
   }
 
+  display: flex;
+
+  flex-direction: column;
+  
+  gap: 20px;
+
   .text-input {
     margin-top: 0 !important;
     label {
@@ -17,6 +23,21 @@
       background-color: $background-color;
       border-width: 0.5px !important;
       color: $white-color !important;
+    }
+  }
+
+  .custom-select {
+    margin-top: 0 !important;
+    label {
+      color: $white-color;
+    }
+    select {
+      margin-top: 0 !important;
+      height: 60px !important;
+      background-color: $background-color;
+      border-width: 0.5px !important;
+      color: $white-color !important;
+      width: 100% !important;
     }
   }
 }

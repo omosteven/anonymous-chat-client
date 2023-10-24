@@ -1,6 +1,19 @@
 export const helper = () => {};
 
-export const getFormattedDate = (date: string) => {
+export const getErrorMessage = (error: any) => {
+  const response = error?.response;
+  const defaultMssg = "Something went wrong. Please try again.";
+  const has500xError = response?.status?.toString?.()?.includes?.("50");
+  const errorMessage = has500xError
+    ? defaultMssg
+    : response?.data
+    ? response?.data?.detail || response?.data?.message
+    : defaultMssg;
+
+  return errorMessage;
+};
+
+export const getFormattedDate = (date?: string) => {
   let monthList = [
     "Jan",
     "Feb",
@@ -16,7 +29,7 @@ export const getFormattedDate = (date: string) => {
     "Dec",
   ];
 
-  let dateTime = new Date(date);
+  let dateTime = date ? new Date(date) : new Date();
 
   let fullYear = dateTime.getFullYear();
   let month = dateTime.getMonth();
@@ -43,3 +56,9 @@ export const getFormattedDate = (date: string) => {
 //     setMessage("Please Enter a Valid Email!");
 //   }
 // }
+
+export const scrollChatToBottom = (ref: any) => {
+  try {
+    ref?.current.scrollIntoView({ behavior: "smooth" });
+  } catch (e) {}
+};

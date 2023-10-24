@@ -1,16 +1,11 @@
-import LayoutHeader from "./LayoutHeader";
-import LayoutSidebar from "./LayoutSidebar";
 import "./Layout.scss";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import { useLocation } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Layout = (props: { children?: ReactNode }) => {
   const { children } = props;
-  const [open, setOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setOpen(!open);
-  };
 
   const { pathname } = useLocation();
   const path = pathname.substring(1);
@@ -22,8 +17,7 @@ const Layout = (props: { children?: ReactNode }) => {
       {!showLayout ? (
         <>
           <div className="layout">
-            <LayoutHeader toggleSidebar={toggleSidebar} open={open} />
-            <main className={open ? "main-expand" : ""}>
+            <main>
               <div className="main-inner">{children}</div>
             </main>
           </div>
@@ -31,6 +25,7 @@ const Layout = (props: { children?: ReactNode }) => {
       ) : (
         <> {children}</>
       )}
+      <ToastContainer />
     </>
   );
 };

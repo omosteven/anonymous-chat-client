@@ -45,7 +45,7 @@ const Select = (props: SelectTypes) => {
   return (
     <>
       <div className={`custom-select ${className}`}>
-        <label className={`label ${labelClass}`}>{label}</label>
+        {label && <label className={`label ${labelClass}`}>{label}</label>}
         <select
           name={name}
           id={id}

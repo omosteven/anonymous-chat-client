@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getToken } from "storage";
+import { getAuthToken } from "storage";
 
 export const httpSignal = axios.CancelToken.source();
 
@@ -24,7 +24,7 @@ const API = axios.create({
 
 API.interceptors.request.use(
   (config) => {
-    const accessToken = getToken();
+    const accessToken = getAuthToken();
     accessToken && (config.headers!.Authorization = "Bearer " + accessToken);
     requestSignal = CancelToken.source();
     config.cancelToken = requestSignal.token;

@@ -1,8 +1,13 @@
 import { Icon } from "components/ui";
 import "./Message.scss";
 
-const Message = (props: { sender: String; date: String; message: String }) => {
-  const { sender, message, date } = props;
+const Message = (props: {
+  sender: String;
+  date: String;
+  message: String;
+  lastTimestamp?: string;
+}) => {
+  const { sender, message, date, lastTimestamp } = props;
   const extraClass = `${sender === "YOU" ? "sent" : ""}`;
 
   return (
@@ -24,7 +29,10 @@ const Message = (props: { sender: String; date: String; message: String }) => {
         <Icon icon="avatar" />
       </div>
       <div className={`message__body ${extraClass}`}>
-        <p>{message}</p>
+        <div className="message__body__top">
+          <p>{message}</p>
+          {lastTimestamp && <span>{lastTimestamp}</span>}
+        </div>
         <span>{date}</span>
         <Icon icon="delete" className={`message__delete ${extraClass}`} />
       </div>

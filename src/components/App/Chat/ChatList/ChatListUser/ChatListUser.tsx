@@ -1,11 +1,25 @@
 import "./ChatListUser.scss";
 import Message from "../../Messages/Message/Message";
 
-const ChatListUser = (props: { handleSelectChat: Function }) => {
-  const { handleSelectChat } = props;
+const ChatListUser = (props: {
+  handleSelectChat: Function;
+  userName?: string;
+  userEmail?: string;
+  id: string;
+  lastMessage?: any;
+}) => {
+  const { handleSelectChat, id, lastMessage } = props;
   return (
-    <div className="chat-list-user" onClick={() => handleSelectChat()}>
-      <Message sender={"OTHER"} message={"Steven Omole"} date="How are you?" />
+    <div
+      className="chat-list-user"
+      onClick={() => handleSelectChat({ _id: id })}
+    >
+      <Message
+        sender={"OTHER"}
+        message={id}
+        date={lastMessage?.content}
+        // lastTimestamp={lastMessage?.messageTime}
+      />
     </div>
   );
 };

@@ -67,4 +67,4 @@ export const pullFirebaseMessagesQuery = (senderId: any, receiverId: any) =>
   );
 
 export const pullFirebaseCollections = (senderId?: any, receiverId?: any) =>
-  query(collection(firebaseDB, "65378449f8d215173041dad9"));
+  query(collection(firebaseDB, senderId));
